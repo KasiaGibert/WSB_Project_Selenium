@@ -1,8 +1,9 @@
 from selenium import webdriver
 import time
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.maximize_window()
 driver.get('https://taniaksiazka.pl/')
 search_field = driver.find_element('id', 'inputSearch')
